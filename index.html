@@ -1,1 +1,348 @@
+<!DOCTYPE html>
 
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DP & Company | Where Experience Meets Excellence</title>
+<meta name="description" content="CA Dhiraj Pal - Expert in IEPF share & dividend recovery, taxation, GST and accounting services in Ambarnath, Thane. 100% recovery success rate.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0f2444;--navy-deep:#081628;--gold:#c8960c;--gold-light:#e8b832;
+  --cream:#faf7f2;--text:#1a1a2e;--muted:#6b7280;--white:#fff;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden;}
+a,button{-webkit-tap-highlight-color:transparent;}
+::-webkit-scrollbar{width:4px;}
+::-webkit-scrollbar-thumb{background:var(--gold);}
+nav{position:fixed;width:100%;top:0;z-index:1000;padding:18px 5%;display:flex;justify-content:space-between;align-items:center;transition:.35s;}
+nav.scrolled{background:rgba(15,36,68,.97);box-shadow:0 2px 20px rgba(0,0,0,.2);}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:700;color:#fff;letter-spacing:.5px;}
+.nav-logo span{color:var(--gold);}
+.nav-links{display:flex;gap:28px;list-style:none;}
+.nav-links a{color:rgba(255,255,255,.85);text-decoration:none;font-size:.78rem;letter-spacing:1.5px;text-transform:uppercase;transition:color .3s;position:relative;}
+.nav-links a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:1px;background:var(--gold);transition:width .3s;}
+.nav-links a:hover{color:var(--gold);}
+.nav-links a:hover::after{width:100%;}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;}
+.hamburger span{width:24px;height:2px;background:#fff;display:block;}
+.mob-menu{display:none;position:fixed;inset:0;background:var(--navy-deep);z-index:999;flex-direction:column;justify-content:center;align-items:center;gap:36px;}
+.mob-menu.open{display:flex;}
+.mob-menu a{color:#fff;text-decoration:none;font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;}
+.mob-menu a:hover{color:var(--gold);}
+.mob-close{position:absolute;top:22px;right:5%;font-size:1.8rem;color:#fff;background:none;border:none;cursor:pointer;}
+#hero{min-height:100vh;background:linear-gradient(135deg,var(--navy-deep) 0%,var(--navy) 55%,#1a3a6e 100%);display:flex;align-items:center;padding:120px 5% 80px;position:relative;overflow:hidden;}
+.hero-pattern{position:absolute;inset:0;opacity:.04;background-image:repeating-linear-gradient(45deg,var(--gold) 0,var(--gold) 1px,transparent 0,transparent 50%);background-size:28px 28px;}
+.hero-ring{position:absolute;border-radius:50%;border:1px solid rgba(200,150,12,.1);}
+.r1{width:560px;height:560px;right:-80px;top:-80px;}
+.r2{width:360px;height:360px;right:60px;top:60px;}
+.r3{width:160px;height:160px;right:160px;top:160px;border-color:rgba(200,150,12,.25);}
+.hero-inner{position:relative;z-index:2;max-width:700px;}
+.hero-badge{display:inline-block;background:rgba(200,150,12,.15);border:1px solid rgba(200,150,12,.4);color:var(--gold-light);font-size:.72rem;letter-spacing:2.5px;text-transform:uppercase;padding:6px 16px;border-radius:2px;margin-bottom:24px;animation:fadeUp .8s both;}
+.hero-name{font-family:'Cormorant Garamond',serif;font-size:clamp(2.6rem,6vw,4.6rem);font-weight:700;color:#fff;line-height:1.1;margin-bottom:6px;animation:fadeUp .8s .1s both;}
+.hero-role{font-family:'Cormorant Garamond',serif;font-size:clamp(.95rem,2vw,1.2rem);color:rgba(255,255,255,.5);font-weight:400;letter-spacing:2px;margin-bottom:24px;animation:fadeUp .8s .2s both;}
+.hero-tagline{font-family:'Cormorant Garamond',serif;font-size:clamp(1rem,2.5vw,1.45rem);color:var(--gold-light);font-style:italic;margin-bottom:24px;animation:fadeUp .8s .3s both;}
+.hero-intro{color:rgba(255,255,255,.7);font-size:.93rem;line-height:1.85;max-width:580px;margin-bottom:20px;animation:fadeUp .8s .4s both;}
+.hero-trust{display:flex;gap:20px;flex-wrap:wrap;margin-bottom:36px;animation:fadeUp .8s .45s both;}
+.trust-item{color:rgba(255,255,255,.6);font-size:.75rem;letter-spacing:1px;}
+.trust-item span{color:var(--gold-light);margin-right:5px;}
+.hero-stats{display:flex;gap:36px;margin-bottom:40px;animation:fadeUp .8s .5s both;}
+.stat-num{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:700;color:var(--gold);line-height:1;}
+.stat-lbl{font-size:.68rem;color:rgba(255,255,255,.45);letter-spacing:1.5px;text-transform:uppercase;margin-top:3px;}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;animation:fadeUp .8s .6s both;}
+.btn-gold{background:var(--gold);color:var(--navy-deep);padding:13px 28px;font-size:.8rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;text-decoration:none;border:none;cursor:pointer;transition:.3s;clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px));display:inline-block;}
+.btn-gold:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 20px rgba(200,150,12,.35);}
+.btn-ghost{background:transparent;color:#fff;padding:13px 28px;font-size:.8rem;font-weight:500;letter-spacing:2px;text-transform:uppercase;text-decoration:none;border:1px solid rgba(255,255,255,.3);transition:.3s;display:inline-block;}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px);}
+section{padding:85px 5%;}
+.s-tag{font-size:.7rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:10px;}
+.s-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.9rem,4vw,2.9rem);font-weight:700;color:var(--navy);line-height:1.2;margin-bottom:14px;}
+.s-sub{font-size:.95rem;color:var(--muted);line-height:1.8;max-width:540px;}
+.gold-line{width:50px;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold-light));margin:14px 0 44px;}
+#services{background:var(--white);}
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:24px;}
+.svc-card{background:var(--cream);border:1px solid rgba(200,150,12,.1);padding:32px 28px;position:relative;overflow:hidden;transition:.35s;}
+.svc-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:0;background:var(--gold);transition:height .35s;}
+.svc-card:hover{transform:translateY(-5px);box-shadow:0 18px 44px rgba(15,36,68,.1);}
+.svc-card:hover::before{height:100%;}
+.svc-num{font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:700;color:rgba(200,150,12,.1);line-height:1;margin-bottom:12px;}
+.svc-name{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:700;color:var(--navy);margin-bottom:10px;}
+.svc-desc{font-size:.86rem;color:var(--muted);line-height:1.8;}
+.svc-tag{display:inline-block;margin-top:14px;background:rgba(200,150,12,.1);color:var(--gold);font-size:.68rem;letter-spacing:1.5px;text-transform:uppercase;padding:3px 10px;border:1px solid rgba(200,150,12,.2);}
+#why{background:linear-gradient(135deg,var(--navy-deep),var(--navy));}
+#why .s-title{color:#fff;}
+#why .s-tag{color:var(--gold-light);}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
+.why-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);padding:28px 24px;transition:.3s;}
+.why-card:hover{background:rgba(200,150,12,.08);border-color:rgba(200,150,12,.25);transform:translateY(-4px);}
+.why-icon{font-size:1.8rem;margin-bottom:14px;}
+.why-name{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:700;color:var(--gold-light);margin-bottom:8px;}
+.why-desc{font-size:.83rem;color:rgba(255,255,255,.55);line-height:1.75;}
+#process{background:var(--cream);}
+.proc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;margin-top:36px;}
+.proc-grid::before{content:'';position:absolute;top:38px;left:8%;right:8%;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
+.proc-step{text-align:center;padding:16px;}
+.proc-num{width:76px;height:76px;border-radius:50%;background:var(--white);border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;margin:0 auto 18px;font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:700;color:var(--gold);position:relative;z-index:2;transition:.3s;}
+.proc-step:hover .proc-num{background:var(--gold);color:#fff;transform:scale(1.08);}
+.proc-name{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:7px;}
+.proc-desc{font-size:.8rem;color:var(--muted);line-height:1.7;}
+#about{background:var(--white);}
+.about-wrap{display:grid;grid-template-columns:1fr 1.6fr;gap:72px;align-items:start;}
+.about-img{position:sticky;top:90px;}
+.about-frame{width:100%;aspect-ratio:3/4;background:linear-gradient(135deg,var(--navy),#1a3a6e);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+.about-frame::after{content:'';position:absolute;bottom:0;left:0;right:0;height:40%;background:linear-gradient(transparent,rgba(200,150,12,.12));}
+.about-init{font-family:'Cormorant Garamond',serif;font-size:4.5rem;color:rgba(200,150,12,.25);font-weight:700;}
+.about-name-tag{position:absolute;bottom:20px;left:20px;background:var(--gold);color:var(--navy-deep);padding:7px 14px;font-size:.7rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;z-index:2;}
+.about-p{font-size:.93rem;color:var(--muted);line-height:1.9;margin-bottom:22px;}
+.about-quote{border-left:3px solid var(--gold);padding:14px 22px;margin:24px 0;background:rgba(200,150,12,.04);}
+.about-quote p{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-style:italic;color:var(--navy);line-height:1.7;}
+.creds{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px;}
+.cred{padding:14px 18px;background:var(--cream);border:1px solid rgba(200,150,12,.15);}
+.cred-l{font-size:.66rem;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:3px;}
+.cred-v{font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:700;color:var(--navy);}
+#faq{background:var(--cream);}
+.faq-wrap{max-width:760px;}
+.faq-item{border-bottom:1px solid rgba(200,150,12,.18);}
+.faq-btn{width:100%;text-align:left;padding:20px 0;background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:14px;}
+.faq-q{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:600;color:var(--navy);text-align:left;}
+.faq-ico{width:26px;height:26px;flex-shrink:0;border:1px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:1.1rem;transition:.3s;}
+.faq-item.open .faq-ico{background:var(--gold);color:#fff;transform:rotate(45deg);}
+.faq-ans{max-height:0;overflow:hidden;transition:max-height .4s ease;}
+.faq-item.open .faq-ans{max-height:280px;}
+.faq-ans p{font-size:.86rem;color:var(--muted);line-height:1.85;padding-bottom:18px;}
+#testimonials{background:var(--white);}
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:24px;}
+.testi-card{background:var(--cream);border:1px solid rgba(200,150,12,.1);padding:32px 28px;position:relative;}
+.testi-card::before{content:'\201C';font-family:'Cormorant Garamond',serif;font-size:4.5rem;color:rgba(200,150,12,.12);position:absolute;top:8px;left:20px;line-height:1;}
+.testi-stars{color:var(--gold);font-size:.82rem;margin-bottom:6px;}
+.testi-text{font-size:.87rem;color:var(--muted);line-height:1.85;margin-bottom:20px;padding-top:22px;font-style:italic;}
+.testi-name{font-family:'Cormorant Garamond',serif;font-size:.98rem;font-weight:700;color:var(--navy);}
+.testi-role{font-size:.72rem;color:var(--gold);letter-spacing:1.5px;text-transform:uppercase;margin-top:3px;}
+#contact{background:linear-gradient(135deg,var(--navy-deep),var(--navy));}
+#contact .s-title{color:#fff;}
+#contact .s-tag{color:var(--gold-light);}
+#contact .s-sub{color:rgba(255,255,255,.55);}
+.contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start;}
+.c-item{display:flex;gap:16px;align-items:flex-start;margin-bottom:28px;}
+.c-icon{width:44px;height:44px;flex-shrink:0;background:rgba(200,150,12,.1);border:1px solid rgba(200,150,12,.25);display:flex;align-items:center;justify-content:center;font-size:1.1rem;}
+.c-lbl{font-size:.66rem;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:5px;}
+.c-val{font-size:.9rem;color:rgba(255,255,255,.82);line-height:1.7;}
+.c-val a{color:rgba(255,255,255,.82);text-decoration:none;}
+.c-val a:hover{color:var(--gold-light);}
+.cta-panel{background:rgba(255,255,255,.04);border:1px solid rgba(200,150,12,.18);padding:44px 36px;text-align:center;}
+.cta-title{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:700;color:#fff;margin-bottom:10px;}
+.cta-sub{font-size:.86rem;color:rgba(255,255,255,.55);line-height:1.8;margin-bottom:28px;}
+footer{background:var(--navy-deep);padding:24px 5%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;border-top:1px solid rgba(200,150,12,.12);}
+.ft-logo{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:700;color:#fff;}
+.ft-logo span{color:var(--gold);}
+.ft-txt{font-size:.72rem;color:rgba(255,255,255,.3);}
+.ft-links{display:flex;gap:20px;}
+.ft-links a{font-size:.72rem;color:rgba(255,255,255,.35);text-decoration:none;cursor:pointer;transition:color .3s;}
+.ft-links a:hover{color:var(--gold);}
+.modal-bg{display:none;position:fixed;inset:0;background:rgba(8,22,40,.92);z-index:2000;align-items:center;justify-content:center;padding:20px;}
+.modal-bg.open{display:flex;}
+.modal-box{background:var(--cream);max-width:640px;width:100%;max-height:85vh;overflow-y:auto;padding:44px;position:relative;animation:modalIn .3s ease;}
+@keyframes modalIn{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
+.modal-x{position:absolute;top:18px;right:22px;font-size:1.4rem;cursor:pointer;color:var(--muted);background:none;border:none;}
+.modal-box h2{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:700;color:var(--navy);margin-bottom:6px;}
+.modal-bar{width:36px;height:2px;background:var(--gold);margin:10px 0 22px;}
+.modal-box p{font-size:.86rem;color:var(--muted);line-height:1.85;margin-bottom:12px;}
+.modal-box ul{padding-left:18px;}
+.modal-box ul li{font-size:.84rem;color:var(--muted);line-height:1.8;margin-bottom:5px;}
+.mob-cta{display:none;position:fixed;bottom:0;width:100%;background:var(--gold);z-index:998;padding:13px;text-align:center;}
+.mob-cta a{color:var(--navy-deep);text-decoration:none;font-weight:600;font-size:.9rem;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:translateY(0);}}
+@media(max-width:960px){.about-wrap{grid-template-columns:1fr;gap:40px;}.about-img{position:static;}.contact-wrap{grid-template-columns:1fr;gap:44px;}.creds{grid-template-columns:1fr;}.proc-grid{grid-template-columns:1fr 1fr;}.proc-grid::before{display:none;}}
+@media(max-width:768px){.nav-links{display:none;}.hamburger{display:flex;}.hero-stats{gap:22px;}.proc-grid{grid-template-columns:1fr 1fr;}footer{flex-direction:column;text-align:center;}.modal-box{padding:28px 18px;}.cta-panel{padding:28px 20px;}.mob-cta{display:block;}}
+@media(max-width:480px){.proc-grid{grid-template-columns:1fr;}.hero-stats{flex-wrap:wrap;gap:16px;}}
+</style>
+</head>
+<body>
+<nav id="navbar">
+  <div class="nav-logo">DP <span>&</span> Company</div>
+  <ul class="nav-links">
+    <li><a href="#hero">Home</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#why">Why Us</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="hamburger" onclick="openMob()"><span></span><span></span><span></span></div>
+</nav>
+<div class="mob-menu" id="mobMenu">
+  <button class="mob-close" onclick="closeMob()">&#x2715;</button>
+  <a href="#hero" onclick="closeMob()">Home</a>
+  <a href="#services" onclick="closeMob()">Services</a>
+  <a href="#why" onclick="closeMob()">Why Us</a>
+  <a href="#process" onclick="closeMob()">Process</a>
+  <a href="#about" onclick="closeMob()">About</a>
+  <a href="#faq" onclick="closeMob()">FAQ</a>
+  <a href="#contact" onclick="closeMob()">Contact</a>
+</div>
+<section id="hero">
+  <div class="hero-pattern"></div>
+  <div class="hero-ring r1"></div>
+  <div class="hero-ring r2"></div>
+  <div class="hero-ring r3"></div>
+  <div class="hero-inner">
+    <div class="hero-badge">Chartered Accountant &nbsp;&middot;&nbsp; Ambarnath, Thane</div>
+    <h1 class="hero-name">CA Dhiraj Pal</h1>
+    <p class="hero-role">Founder &amp; Proprietor &mdash; DP &amp; Company</p>
+    <p class="hero-tagline">&ldquo;Where Experience Meets Excellence&rdquo;</p>
+    <p class="hero-intro">A qualified Chartered Accountant with over 7 years of expertise in Direct &amp; Indirect Taxation, Accounting, Finance and Credit Assessment. My standout specialisation is the recovery of unclaimed shares and dividends from IEPF &mdash; with a proud record of <strong style="color:var(--gold-light)">100% successful recoveries</strong> for every client represented to date.</p>
+    <div class="hero-trust">
+      <div class="trust-item"><span>&#10003;</span>ICAI Member</div>
+      <div class="trust-item"><span>&#10003;</span>7+ Years Experience</div>
+      <div class="trust-item"><span>&#10003;</span>100% IEPF Success</div>
+    </div>
+    <div class="hero-stats">
+      <div><div class="stat-num">7+</div><div class="stat-lbl">Years Experience</div></div>
+      <div><div class="stat-num">100%</div><div class="stat-lbl">IEPF Recovery Rate</div></div>
+      <div><div class="stat-num">6</div><div class="stat-lbl">Core Services</div></div>
+    </div>
+    <div class="hero-cta">
+      <a href="mailto:dpandcompanyy@gmail.com" class="btn-gold">Get In Touch</a>
+      <a href="#services" class="btn-ghost">Our Services</a>
+    </div>
+  </div>
+</section>
+<section id="services">
+  <p class="s-tag">What We Offer</p>
+  <h2 class="s-title">Our Services</h2>
+  <div class="gold-line"></div>
+  <div class="svc-grid">
+    <div class="svc-card"><div class="svc-num">01</div><h3 class="svc-name">Recovery of Shares &amp; Dividends from IEPF</h3><p class="svc-desc">Lost track of your old shares or unclaimed dividends? We handle the entire IEPF recovery process on your behalf &mdash; from documentation to final credit of shares and dividends &mdash; with a proud record of 100% successful recoveries.</p><span class="svc-tag">Our Speciality</span></div>
+    <div class="svc-card"><div class="svc-num">02</div><h3 class="svc-name">Physical Shares to Demat Conversion</h3><p class="svc-desc">Hold old physical share certificates? We seamlessly convert them into electronic Demat form, making your investments secure, accessible and fully compliant with current regulations.</p></div>
+    <div class="svc-card"><div class="svc-num">03</div><h3 class="svc-name">Transmission of Shares</h3><p class="svc-desc">Lost a loved one who held shares? We guide families through the sensitive and complex process of transmitting shares to legal heirs &mdash; with care, clarity and complete legal compliance.</p></div>
+    <div class="svc-card"><div class="svc-num">04</div><h3 class="svc-name">Direct Taxation</h3><p class="svc-desc">From income tax planning to return filing and assessments, we provide end-to-end direct tax services for individuals and businesses &mdash; ensuring full compliance while maximising your tax efficiency.</p></div>
+    <div class="svc-card"><div class="svc-num">05</div><h3 class="svc-name">Indirect Taxation</h3><p class="svc-desc">Complete GST registration, filing, reconciliation and advisory services &mdash; keeping your business compliant, penalty free and always audit ready.</p></div>
+    <div class="svc-card"><div class="svc-num">06</div><h3 class="svc-name">Accounting &amp; Bookkeeping Services</h3><p class="svc-desc">Accurate, organised and timely accounting solutions for businesses of all sizes &mdash; so your books are always clean, your finances are always clear and your decisions are always informed.</p></div>
+  </div>
+</section>
+<section id="why">
+  <p class="s-tag">Our Edge</p>
+  <h2 class="s-title">Why Choose DP &amp; Company</h2>
+  <div class="gold-line"></div>
+  <div class="why-grid">
+    <div class="why-card"><div class="why-icon">&#127942;</div><h3 class="why-name">100% IEPF Recovery Rate</h3><p class="why-desc">Every IEPF case we have taken on has been successfully resolved. That record is our most powerful promise to you.</p></div>
+    <div class="why-card"><div class="why-icon">&#127919;</div><h3 class="why-name">Niche Expertise</h3><p class="why-desc">Very few professionals in India have the depth of regulatory knowledge and hands-on IEPF experience that we bring to every case.</p></div>
+    <div class="why-card"><div class="why-icon">&#129309;</div><h3 class="why-name">Personal Attention</h3><p class="why-desc">Every case is handled personally by CA Dhiraj Pal. You will never be passed to a junior or left without updates.</p></div>
+    <div class="why-card"><div class="why-icon">&#128274;</div><h3 class="why-name">Complete Confidentiality</h3><p class="why-desc">Your financial and personal information is held in the strictest confidence. We never share your data outside your case.</p></div>
+    <div class="why-card"><div class="why-icon">&#128203;</div><h3 class="why-name">End-to-End Service</h3><p class="why-desc">From the first document to final credit &mdash; we handle everything. No need to follow up with authorities yourself.</p></div>
+    <div class="why-card"><div class="why-icon">&#128161;</div><h3 class="why-name">7+ Years of Trust</h3><p class="why-desc">Over 7 years of serving individuals, families and businesses across India &mdash; our reputation is built entirely on results.</p></div>
+  </div>
+</section>
+<section id="process">
+  <p class="s-tag">How We Work</p>
+  <h2 class="s-title">Our IEPF Recovery Process</h2>
+  <div class="gold-line"></div>
+  <p class="s-sub">A transparent, step-by-step approach that keeps you informed at every stage.</p>
+  <div class="proc-grid">
+    <div class="proc-step"><div class="proc-num">01</div><h4 class="proc-name">Document Collection</h4><p class="proc-desc">We prepare a precise checklist and assist you in gathering everything needed for filing.</p></div>
+    <div class="proc-step"><div class="proc-num">02</div><h4 class="proc-name">Filing with IEPF Authority</h4><p class="proc-desc">We file your application accurately and coordinate with the concerned company and its registrar.</p></div>
+    <div class="proc-step"><div class="proc-num">03</div><h4 class="proc-name">Follow-Up &amp; Tracking</h4><p class="proc-desc">We actively follow up with all relevant parties and keep you updated at every step.</p></div>
+    <div class="proc-step"><div class="proc-num">04</div><h4 class="proc-name">Successful Recovery</h4><p class="proc-desc">Your shares and dividends are credited back to your Demat and bank account &mdash; rightfully back where they belong.</p></div>
+  </div>
+</section>
+<section id="about">
+  <div class="about-wrap">
+    <div class="about-img">
+      <div class="about-frame">
+        <div class="about-init">CA</div>
+        <div class="about-name-tag">CA Dhiraj Pal</div>
+      </div>
+    </div>
+    <div>
+      <p class="s-tag">About Me</p>
+      <h2 class="s-title">The Person Behind the Practice</h2>
+      <div class="gold-line"></div>
+      <p class="about-p">I am CA Dhiraj Pal, a qualified Chartered Accountant and the Founder of DP &amp; Company. With over 7 years of dedicated experience in taxation, accounting, finance and investor services, I have built my practice on one simple but powerful belief &mdash; every client deserves honest advice, personalised attention and results they can count on.</p>
+      <p class="about-p">My journey began with a deep passion for numbers and financial problem solving. Over the years, while serving individuals, families and businesses, I discovered a deeply underserved area &mdash; the recovery of unclaimed shares and dividends that had quietly slipped into the IEPF due to inactivity or lack of awareness. Case by case, family by family, I developed a mastery of the IEPF recovery process and I have never looked back since.</p>
+      <div class="about-quote"><p>&ldquo;Over the years what has kept me going is not just the work &mdash; it is the moment a client smiles knowing their long lost shares are back in their hands. If you would like to experience that &mdash; I am just an email away.&rdquo;</p></div>
+      <p class="about-p">At DP &amp; Company, I do not treat cases as files. I treat them as responsibilities. Your financial wellbeing is not just a professional obligation for me &mdash; it is a personal one.</p>
+      <div class="creds">
+        <div class="cred"><div class="cred-l">Qualification</div><div class="cred-v">Chartered Accountant (CA)</div></div>
+        <div class="cred"><div class="cred-l">Experience</div><div class="cred-v">7+ Years</div></div>
+        <div class="cred"><div class="cred-l">IEPF Recovery Rate</div><div class="cred-v">100% Success</div></div>
+        <div class="cred"><div class="cred-l">Location</div><div class="cred-v">Ambarnath (E), Thane</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="faq">
+  <p class="s-tag">Common Questions</p>
+  <h2 class="s-title">Frequently Asked Questions</h2>
+  <div class="gold-line"></div>
+  <div class="faq-wrap">
+    <div class="faq-item"><button class="faq-btn" onclick="toggleFaq(this)"><span class="faq-q">What is IEPF and how do shares get transferred there?</span><span class="faq-ico">+</span></button><div class="faq-ans"><p>IEPF stands for Investor Education and Protection Fund. If dividends on shares remain unclaimed for 7 consecutive years, both the unpaid dividends and the underlying shares are transferred by the company to the IEPF Authority as per the Companies Act. Many investors are unaware this has happened.</p></div></div>
+    <div class="faq-item"><button class="faq-btn" onclick="toggleFaq(this)"><span class="faq-q">Can I recover my shares and dividends from IEPF?</span><span class="faq-ico">+</span></button><div class="faq-ans"><p>Yes, absolutely. The IEPF Authority allows investors or their legal heirs to file a claim for refund of shares and dividends. With proper guidance and accurate documentation, full recovery is possible.</p></div></div>
+    <div class="faq-item"><button class="faq-btn" onclick="toggleFaq(this)"><span class="faq-q">How long does the IEPF recovery process take?</span><span class="faq-ico">+</span></button><div class="faq-ans"><p>The timeline depends on the complexity of the case and IEPF Authority processing. On average, a straightforward case can be resolved within 3 to 6 months. We actively follow up on your behalf and keep you informed at every stage.</p></div></div>
+    <div class="faq-item"><button class="faq-btn" onclick="toggleFaq(this)"><span class="faq-q">What documents are required for IEPF recovery?</span><span class="faq-ico">+</span></button><div class="faq-ans"><p>The documents required vary depending on the nature and complexity of your case. Please reach out to us directly and we will provide you with a personalised checklist specific to your situation.</p></div></div>
+    <div class="faq-item"><button class="faq-btn" onclick="toggleFaq(this)"><span class="faq-q">Can family members claim shares of a deceased investor?</span><span class="faq-ico">+</span></button><div class="faq-ans"><p>Yes. Legal heirs can claim shares and dividends transferred to IEPF by a deceased investor. We handle both the transmission of shares and the IEPF claim simultaneously, with sensitivity and complete legal compliance.</p></div></div>
+    <div class="faq-item"><button class="faq-btn" onclick="toggleFaq(this)"><span class="faq-q">What are your professional fees?</span><span class="faq-ico">+</span></button><div class="faq-ans"><p>Our fees are discussed and agreed upon individually for each case. We believe in complete transparency &mdash; there are no hidden charges. Please reach out to us directly for a fee discussion.</p></div></div>
+  </div>
+</section>
+<section id="testimonials">
+  <p class="s-tag">Client Experiences</p>
+  <h2 class="s-title">What Our Clients Say</h2>
+  <div class="gold-line"></div>
+  <div class="testi-grid">
+    <div class="testi-card"><div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="testi-text">We had completely given up on our father&rsquo;s old shares. CA Dhiraj not only recovered every single share but also the accumulated dividends. His patience in explaining the process was truly commendable.</p><div class="testi-name">Ramesh Sharma</div><div class="testi-role">IEPF Recovery &middot; Mumbai</div></div>
+    <div class="testi-card"><div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="testi-text">Exceptional GST compliance service. Always available, always thorough. It has been 3 years and we have never once received a notice or penalty. That says everything.</p><div class="testi-name">Priya Mehta</div><div class="testi-role">GST &amp; Accounting &middot; Thane</div></div>
+    <div class="testi-card"><div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="testi-text">I had physical share certificates lying in a drawer for years. The Demat conversion was handled smoothly and professionally. Highly recommend DP &amp; Company to anyone in the same situation.</p><div class="testi-name">Sunil Kulkarni</div><div class="testi-role">Demat Conversion &middot; Ambarnath</div></div>
+    <div class="testi-card"><div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="testi-text">My late mother had invested in several companies decades ago. CA Dhiraj guided us through every step and recovered all the shares and years of pending dividends. Truly a life-changing experience for our family.</p><div class="testi-name">Anjali Deshmukh</div><div class="testi-role">IEPF Recovery &middot; Pune</div></div>
+    <div class="testi-card"><div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="testi-text">I had been trying to recover my father&rsquo;s shares on my own for almost a year. After engaging DP &amp; Company, everything was handled professionally and shares were back in months. Wish I had approached them sooner.</p><div class="testi-name">Vikram Joshi</div><div class="testi-role">IEPF Recovery &middot; Kalyan</div></div>
+    <div class="testi-card"><div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="testi-text">We were unaware that shares held by my grandfather had been transferred to IEPF. CA Dhiraj identified all the holdings and recovered both the shares and dividends without any hassle. His expertise is unmatched.</p><div class="testi-name">Neha Patil</div><div class="testi-role">IEPF Recovery &middot; Thane</div></div>
+  </div>
+</section>
+<section id="contact">
+  <div class="contact-wrap">
+    <div>
+      <p class="s-tag">Reach Out</p>
+      <h2 class="s-title">Let&rsquo;s Connect</h2>
+      <div class="gold-line"></div>
+      <p class="s-sub">Whether you have unclaimed shares, a tax query, or simply need a reliable financial partner &mdash; we are here.</p>
+      <br><br>
+      <div class="c-item"><div class="c-icon">&#128205;</div><div><div class="c-lbl">Our Office</div><div class="c-val">A-505, Kailash Darshan CHS, Besides Ambarnath Jai Hind Bank,<br>Near Varsha Society, Vadavali Section, Ambarnath (E), Thane &ndash; 421501</div></div></div>
+      <div class="c-item"><div class="c-icon">&#128222;</div><div><div class="c-lbl">Call Us</div><div class="c-val"><a href="tel:+918655221257">+91 8655221257</a><br><a href="tel:+919356972355">+91 9356972355</a></div></div></div>
+      <div class="c-item"><div class="c-icon">&#9993;</div><div><div class="c-lbl">Email Us</div><div class="c-val"><a href="mailto:dpandcompanyy@gmail.com">dpandcompanyy@gmail.com</a></div></div></div>
+    </div>
+    <div class="cta-panel">
+      <h3 class="cta-title">Take the First Step Towards Reclaiming What&rsquo;s Yours</h3>
+      <p class="cta-sub">Write to us directly. Describe your query and we will get back to you at the earliest.</p>
+      <a href="mailto:dpandcompanyy@gmail.com" class="btn-gold">Email Us Now</a>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="ft-logo">DP <span>&</span> Company</div>
+  <div class="ft-txt">&copy; 2026 DP &amp; Company. All rights reserved. | CA Dhiraj Pal</div>
+  <div class="ft-links">
+    <a onclick="openModal('privacy')">Privacy Policy</a>
+    <a onclick="openModal('terms')">Terms &amp; Conditions</a>
+    <a onclick="openModal('disclaimer')">Disclaimer</a>
+  </div>
+</footer>
+<div class="modal-bg" id="modal-privacy"><div class="modal-box"><button class="modal-x" onclick="closeModal('privacy')">&#x2715;</button><h2>Privacy Policy</h2><div class="modal-bar"></div><p><strong>DP &amp; Company | March 2026</strong></p><p>We respect your privacy. Any personal information you share with us is collected solely to provide our services. We do not sell or share your data with any third party except where required by law or necessary to process your case with relevant government authorities.</p><p>You may request access, correction or deletion of your data at any time by contacting us at <strong>dpandcompanyy@gmail.com</strong></p></div></div>
+<div class="modal-bg" id="modal-terms"><div class="modal-box"><button class="modal-x" onclick="closeModal('terms')">&#x2715;</button><h2>Terms &amp; Conditions</h2><div class="modal-bar"></div><p><strong>DP &amp; Company | March 2026</strong></p><p>By using this website or engaging our services you agree that:</p><ul><li>This website is for informational purposes only</li><li>Clients must provide complete and accurate documents. Delays caused by incomplete information are not our responsibility</li><li>Fees are discussed and agreed separately for each case</li><li>All website content belongs to DP &amp; Company and cannot be copied without permission</li><li>These terms are governed by Indian law and subject to jurisdiction of courts at Ambarnath</li></ul><p style="margin-top:12px;">Contact: <strong>dpandcompanyy@gmail.com</strong></p></div></div>
+<div class="modal-bg" id="modal-disclaimer"><div class="modal-box"><button class="modal-x" onclick="closeModal('disclaimer')">&#x2715;</button><h2>Disclaimer</h2><div class="modal-bar"></div><p><strong>DP &amp; Company | March 2026</strong></p><p>All content on this website is for general informational purposes only and does not constitute professional advice. Visiting this website does not establish a client relationship.</p><p>While we have achieved a 100% IEPF recovery rate to date, each case is unique and outcomes depend on document completeness, government processing timelines and applicable regulations. Past performance does not guarantee identical future results.</p><p>We are not liable for any decisions made solely based on information available on this website.</p><p>Contact: <strong>dpandcompanyy@gmail.com</strong></p></div></div>
+<a href="https://wa.me/918655221257?text=Hello%20CA%20Dhiraj%20Pal%2C%20I%20found%20your%20website%20and%20would%20like%20to%20know%20more." target="_blank" style="position:fixed;bottom:80px;right:24px;z-index:997;background:#25D366;color:#fff;width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.4rem;box-shadow:0 4px 16px rgba(37,211,102,.4);text-decoration:none;transition:transform .2s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">&#128172;</a>
+<div class="mob-cta"><a href="tel:+919356972355">&#128222; Call Now &nbsp;|&nbsp; +91 9356972355</a></div>
+<script>
+window.addEventListener('scroll',()=>{document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>40);});
+function openMob(){document.getElementById('mobMenu').classList.add('open');document.body.style.overflow='hidden';}
+function closeMob(){document.getElementById('mobMenu').classList.remove('open');document.body.style.overflow='';}
+function toggleFaq(btn){const item=btn.closest('.faq-item');const isOpen=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));if(!isOpen)item.classList.add('open');}
+function openModal(key){document.getElementById('modal-'+key).classList.add('open');document.body.style.overflow='hidden';}
+function closeModal(key){document.getElementById('modal-'+key).classList.remove('open');document.body.style.overflow='';}
+document.querySelectorAll('.modal-bg').forEach(m=>{m.addEventListener('click',function(e){if(e.target===this)this.classList.remove('open'),document.body.style.overflow='';});});
+</script>
+</body>
+</html>
